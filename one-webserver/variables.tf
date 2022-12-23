@@ -3,3 +3,8 @@ variable "server_port" {
   type        = number
   default     = 8080
 }
+
+variable "security_group_name" {
+	type = string
+	default = "std04-terraform-example-instance"
+}
