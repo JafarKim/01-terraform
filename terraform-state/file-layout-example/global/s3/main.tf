@@ -13,7 +13,7 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
-# 원격 상태 광리 저장소로 S3을 사용
+# 원격 상태 관리 저장소로 S3을 사용
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "std04-terraform-state"
 
@@ -43,7 +43,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_encrypt
   }
 }
 
-
+# 다이나모 DB 테이블 생성
 resource "aws_dynamodb_table" "terraform_locks" {
   name         = "std04-terraform-locks"
   billing_mode = "PAY_PER_REQUEST"
